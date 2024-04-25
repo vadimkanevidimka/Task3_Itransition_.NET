@@ -21,6 +21,8 @@
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
+                Environment.Exit(1);
                 return false;
             }
         }

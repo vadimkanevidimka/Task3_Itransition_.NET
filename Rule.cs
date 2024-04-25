@@ -51,6 +51,7 @@ namespace Task3
                 if (item.Key == ComputerChoise)
                     if (item.Value.Contains(userChoise)) { Console.WriteLine("You lose!"); break; }
             }
+            Console.WriteLine("HMAC: " + String.Concat(_hMACGenerator.GenerateHMAC(ComputerChoise).Select(item => item.ToString("x2"))));
             ChangeComputerChoise();
         }
 
@@ -58,7 +59,6 @@ namespace Task3
         {
             Random random = new Random();
             ComputerChoise = args[random.Next(args.Length)];
-            Console.WriteLine("HMAC: " + String.Concat(_hMACGenerator.GenerateHMAC().Select(item => item.ToString("x2"))));
         }
     }
 }
